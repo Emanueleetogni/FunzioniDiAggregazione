@@ -1,3 +1,38 @@
+CREATE TABLE Fornitori (
+    idfornitore INT PRIMARY KEY,
+    nome VARCHAR(255) NOT NULL,
+    indirizzo VARCHAR(255) NOT NULL,
+    città VARCHAR(255) NOT NULL,
+    cap VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE Prodotti (
+    idprodotto INT PRIMARY KEY,
+    quantità INT NOT NULL,
+    prezzo DECIMAL(10,2) NOT NULL,
+    nome VARCHAR(255) NOT NULL,
+    marca VARCHAR(255) NOT NULL,
+    idfornitore INT NOT NULL,
+    FOREIGN KEY (idfornitore) REFERENCES Fornitori(idfornitore)
+);
+
+CREATE TABLE Clienti (
+    codice_fiscale VARCHAR(255) PRIMARY KEY,
+    nome VARCHAR(255) NOT NULL,
+    cognome VARCHAR(255) NOT NULL,
+    tipo_carta VARCHAR(255) NOT NULL,
+    numero_carta VARCHAR(255) NOT NULL,
+    scadenza_carta DATE NOT NULL
+);
+
+CREATE TABLE Acquisti (
+    idprodotto INT NOT NULL,
+    codfisc_cliente VARCHAR(255) NOT NULL,
+    PRIMARY KEY (idprodotto, codfisc_cliente),
+    FOREIGN KEY (idprodotto) REFERENCES Prodotti(idprodotto),
+    FOREIGN KEY (codfisc_cliente) REFERENCES Clienti(codice_fiscale)
+);
+
 --TABLE Fornitori
 
 INSERT INTO Fornitori (idfornitore, nome, indirizzo, città, cap) VALUES (1, 'Fornitore1', 'Via delle Rose, 1', 'Roma', '00100');

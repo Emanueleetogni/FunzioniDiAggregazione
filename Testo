@@ -1,0 +1,18 @@
+Dato il seguente database: 
+
+Fornitori(idfornitore, nome, indirizzo, città, cap) 
+Prodotti(idprodotto, quantità, prezzo, nome, marca, idfornitore) 
+Clienti(codice_fiscale, nome, cognome, tipo_carta, numero_carta, scadenza_carta) 
+Acquisti(idprodotto, codfisc_cliente) 
+
+- dopo aver creato lo schema E/R
+
+- svolgere le seguenti query SQL:
+1) Contare quanti prodotti hanno un prezzo maggiore di 50 €
+2) Contare quanti sono i clienti che hanno la carta in scadenza dopo il 2024
+3) Visualizzare tutti i dati del prodotto col prezzo più alto
+4) visualizzare il prezzo medio dei prodotti del fornitore "Bianchi"
+5) visualizzare il nome del cliente che ha acquistato il prodotto col prezzo più basso
+6) Visualizzare i dati dei prodotti acquistati dal cliente "Rossi" in ordine alfabetico
+7) Visualizzare i dati dei fornitori di "Roma" i cui prodotti sono stati acquistati da clienti di "Rimini"
+8) Contare quanti sono i prodotti in vendita del fornitore ""Verdi"
